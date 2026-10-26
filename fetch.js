@@ -31,19 +31,19 @@ Suerte
 userId (number), id (number), title (string) y body (string).
 */
 
-const obtenerPublicaciones = async () => {
+const getPosts = async () => {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts")
-        const publicaciones = await response.json()
-            publicaciones.forEach((publicacion) => {
-            console.log("ID:", publicacion.id)
-            console.log("User:", publicacion.id)
-            console.log("Título:", publicacion.title)
-            console.log("Contenido:", publicacion.body)
+        const posts = await response.json()
+            posts.forEach((post) => {
+            console.log("ID:", post.userId)
+            console.log("User:", post.id)
+            console.log("Título:", post.title)
+            console.log("Contenido:", post.body)
         })
     } catch (error) {
         console.error("No se pudieron obtener las publicaciones:", error)
     }
 }
 
-obtenerPublicaciones()
+getPosts ()
