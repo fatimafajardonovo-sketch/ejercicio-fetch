@@ -25,6 +25,23 @@ Suerte
 */
 
 
+/* 
+1. https://github.com/fatimafajardonovo-sketch/ejercicio-fetch
+2. Recurso: /posts. La respuesta es un arreglo de objetos. Cada publicación tiene:
+userId (number), id (number), title (string) y body (string).
+*/
 
+const obtenerPublicaciones = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+        const publicaciones = await response.json()
+        console.log (publicaciones.id)
+        console.log ("titulo", publicaciones.title)
+        console.log ("contenido", publicaciones.blog)
+    } catch (error) {
+        console.error("No se pudieron obtener las publicaciones:", error)
+    }
+}
 
+obtenerPublicaciones()
 
