@@ -36,9 +36,9 @@ const obtenerPublicaciones = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts")
         const publicaciones = await response.json()
         publicaciones.array.forEach(publicacion => {
-        console.log (publicaciones.id)
-        console.log ("titulo", publicaciones.title)
-        console.log ("contenido", publicaciones.blog)
+        console.log ("id: ", publicaciones.id)
+        console.log ("titulo: ", publicaciones.title)
+        console.log ("contenido: ", publicaciones.blog)
         });
 
     } catch (error) {
